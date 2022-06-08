@@ -5,7 +5,7 @@ export default function TaskList(props) {
 
     return (
         <div>
-            <h1>Task List</h1>
+            <h1>{props.task}</h1>
         </div>
     );
 }
