@@ -8,6 +8,12 @@
 body {
     /* background: radial-gradient(circle, rgba(2,1,49,1) 79%, rgba(2,1,59,1) 79%, rgba(0,212,255,1) 100%); */
 
-    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Dancing Script', cursive;
+
     font-family: 'Indie Flower', cursive;
+    
+}
+
+h1  {
+    
 }
