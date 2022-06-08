@@ -15,7 +15,7 @@ export default function TaskList(props) {
 
             <tbody>
                 {props.tasks.map((task, index) => (
-                    <TaskItem key={index} task={task} id={index} />
+                    <TaskItem key={index} task={task} id={index} deleteTask={props.deleteTask} />
                 ))}
             </tbody>
         </Table>

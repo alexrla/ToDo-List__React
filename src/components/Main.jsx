@@ -17,12 +17,18 @@ export default function Main(props) {
         setTasks([...tasks, task]);
     }
 
+    function deleteTask(taskId)   {
+        tasks.splice(taskId, 1);
+
+        setTasks([...tasks]);
+    }
+
     return (
         <DivMain>
             <h1>To Do List</h1>
 
             <CreateTask createTask={createTask} />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} deleteTask={deleteTask} />
         </DivMain>
     );
 }

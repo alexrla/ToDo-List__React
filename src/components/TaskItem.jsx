@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export default function TaskItem(props) {
+    function deleteTask()   {
+        props.deleteTask(props.id);
+    }
+
     return (
         <TR>
             <td>
@@ -10,7 +14,7 @@ export default function TaskItem(props) {
             <td>
                 <button>Editar</button>
                 <div className="spacing"></div>
-                <button>Deletar</button>
+                <button onClick={deleteTask}>Deletar</button>
             </td>
         </TR>
     );
