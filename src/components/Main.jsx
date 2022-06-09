@@ -7,6 +7,7 @@ import TaskList from './TaskList';
 
 export default function Main(props) {
     const [ tasks, setTasks ] = useState([]);
+    let complete = false;
 
     function createTask(task)   {
         if(task.trim() === "") {
@@ -28,15 +29,20 @@ export default function Main(props) {
 
         taskItem[taskId] = task;
 
-        setTasks([... taskItem]);
+        setTasks([...taskItem]);
     }
+
 
     return (
         <DivMain>
             <h1>To Do List</h1>
 
             <CreateTask createTask={createTask} />
-            <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
+            <TaskList   tasks={tasks} 
+                        deleteTask={deleteTask} 
+                        editTask={editTask}
+                        complete={complete} 
+            />
         </DivMain>
     );
 }

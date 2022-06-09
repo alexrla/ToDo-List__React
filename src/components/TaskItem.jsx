@@ -5,20 +5,28 @@ import styled from 'styled-components';
 export default function TaskItem(props) {
     const [ task, setTask ] = useState(props.task);
     const [ toEdit, setToEdit ] = useState(false);
+    const [ complete, setComplete ] = useState(false);
 
 
     function deleteTask()   {
         props.deleteTask(props.id);
     }
 
-    function renameTask() {
-        console.log(props.id);
+    function renameTask(event) {
+        // event.preventDefault();
 
         props.editTask(props.id, task);
 
         setToEdit(false);
     }
 
+    function toggleTask()   {
+        const toComplete = !complete;
+
+        setComplete(toComplete);
+    }
+
+    
     return (
         <TR>
             {
@@ -26,29 +34,34 @@ export default function TaskItem(props) {
                     ?
                     <>
                         <td>
-                            <input  type="text" 
-                                    value={task}
-                                    onChange = {(event) => setTask(event.target.value)}
-                                    autoFocus 
-                            />
+                            <form /*onSubmit={renameTask}*/ >
+                                <input  type="text" 
+                                        value={task}
+                                        onChange = {(event) => setTask(event.target.value)}
+                                        autoFocus
+                                />
+                            </form>
                         </td>
 
                         <td>
-                            <button type="button" onClick={renameTask}>Salvar</button>
+                            <button type="submit" onClick={renameTask}>Salvar</button>
                             <div className="spacing"></div>
                             <button type="button" onClick={() => setToEdit(false)}>Voltar</button>
                         </td>
                     </>
                     :
                     <>
-                        <td>
-                            {props.task}
+                        <td onClick={toggleTask} className="checkbox">
+                            <input type="checkbox" readOnly checked={complete} />
+                            <span className={complete ? "trace" : ""}>
+                                {props.task}
+                            </span>
                         </td>
 
                         <td>
                             <button onClick={() => setToEdit(true)}>Editar</button>
                             <div className="spacing"></div>
-                            <button onClick={deleteTask}>Deletar</button>
+                            <button onClick={deleteTask}>Apagar</button>
                         </td>
                     </>
             }
@@ -78,5 +91,25 @@ const TR = styled.tr`
         text-align: center;
 
         padding-top: 10px;
+    }
+
+    span    {
+        cursor: pointer;
+    }
+
+    .trace  {
+        text-decoration: line-through;
+
+        color: #376CD7;
+    }
+
+    .checkbox {
+        align-items: center;
+
+        display: flex;
+    }
+
+    button  {
+        cursor: pointer;
     }
 `;

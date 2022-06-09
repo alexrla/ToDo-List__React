@@ -20,6 +20,7 @@ export default function TaskList(props) {
                                 id={index} 
                                 deleteTask={props.deleteTask} 
                                 editTask ={props.editTask}
+                                complete={props.complete} 
                 />
                 ))}
             </tbody>
@@ -29,6 +30,8 @@ export default function TaskList(props) {
 
 const Table = styled.table`
     width: 600px;
+
+    font-family: 'Courgette', cursive;
 
     tr      {
         display: flex;
