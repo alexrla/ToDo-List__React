@@ -23,12 +23,20 @@ export default function Main(props) {
         setTasks([...tasks]);
     }
 
+    function editTask(taskId, task)   {
+        const taskItem = tasks;
+
+        taskItem[taskId] = task;
+
+        setTasks([... taskItem]);
+    }
+
     return (
         <DivMain>
             <h1>To Do List</h1>
 
             <CreateTask createTask={createTask} />
-            <TaskList tasks={tasks} deleteTask={deleteTask} />
+            <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
         </DivMain>
     );
 }
