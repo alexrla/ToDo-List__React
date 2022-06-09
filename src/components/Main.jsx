@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styled from 'styled-components';
 
@@ -8,6 +8,18 @@ import TaskList from './TaskList';
 export default function Main(props) {
     const [ tasks, setTasks ] = useState([]);
     let complete = false;
+
+    useEffect(() => {
+        const tasksStorage = localStorage.getItem("tasks");
+
+        if(tasksStorage) {
+            setTasks(JSON.parse(tasksStorage));
+        }
+    }, [setTasks]);
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
 
     function createTask(task)   {
         if(task.trim() === "") {

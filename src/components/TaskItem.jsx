@@ -44,9 +44,9 @@ export default function TaskItem(props) {
                         </td>
 
                         <td>
-                            <button type="submit" onClick={renameTask}>Salvar</button>
+                            <button type="submit" className="save" onClick={renameTask}>Salvar</button>
                             <div className="spacing"></div>
-                            <button type="button" onClick={() => setToEdit(false)}>Voltar</button>
+                            <button type="button" className="back" onClick={() => setToEdit(false)}>Voltar</button>
                         </td>
                     </>
                     :
@@ -59,9 +59,9 @@ export default function TaskItem(props) {
                         </td>
 
                         <td>
-                            <button onClick={() => setToEdit(true)}>Editar</button>
+                            <button  className="edit" onClick={() => setToEdit(true)}>Editar</button>
                             <div className="spacing"></div>
-                            <button onClick={deleteTask}>Apagar</button>
+                            <button className="delete" onClick={deleteTask}>Apagar</button>
                         </td>
                     </>
             }
@@ -111,5 +111,77 @@ const TR = styled.tr`
 
     button  {
         cursor: pointer;
+    }
+
+    .edit {
+        background-color: #FFFFFF;
+
+        border: 2px solid #4f9c5a;
+
+        border-radius: 5px;
+
+        color: #4f9c5a;
+
+        padding: 5px;
+    }
+
+    .edit:hover {
+        background-color: #4f9c5a;
+
+        color: #FFFFFF;
+    }
+
+    .delete {
+        background-color: #FFFFFF;
+        
+        color: #d24b4b;
+
+        border: 2px solid #d24b4b;
+
+        padding: 5px;
+
+        border-radius: 5px;
+    }
+
+    .delete:hover {
+        background-color: #d24b4b;
+        
+        color: #FFFFFF;
+    }
+
+    .save   {
+        background-color: #FFFFFF;
+        
+        color: #5068be;
+
+        border: 2px solid #5068be;
+
+        padding: 5px;
+
+        border-radius: 5px;
+    }
+
+    .save:hover   {
+        background-color: #5068be;
+        
+        color: #FFFFFF;
+    }
+
+    .back   {
+        color: #ddb95c;
+        
+        border: 2px solid #ddb95c;
+
+        background-color: #FFFFFF;
+
+        padding: 5px;
+
+        border-radius: 5px;
+    }
+
+    .back:hover   {
+        color: #FFFFFF;
+
+        background-color: #ddb95c;
     }
 `;
