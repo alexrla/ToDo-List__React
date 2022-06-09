@@ -66,15 +66,17 @@ const DivMain = styled.div`
 
     flex-direction: column;
 
+    max-width: 95%;
+
+    width: 100%;
+
     h1  {
-    padding-top: 40px;
+        color: #FFFFFF;
 
-    padding-bottom: 10px;
+        font-size: 36px;
 
-    color: #FFFFFF;
+        font-weight: bold;
 
-    font-size: 36px;
-
-    font-weight: bold;
-  }
+        padding: 40px 0 10px;
+    }
 `;

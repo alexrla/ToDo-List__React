@@ -28,7 +28,7 @@ export default function TaskItem(props) {
 
     
     return (
-        <TR>
+        <Tr>
             {
                 toEdit
                     ?
@@ -66,11 +66,11 @@ export default function TaskItem(props) {
                     </>
             }
             
-        </TR>
+        </Tr>
     );
 }
 
-const TR = styled.tr`
+const Tr = styled.tr`
     margin-bottom: 15px;
 
     .spacing    {
@@ -78,19 +78,17 @@ const TR = styled.tr`
     }
 
     td  {
-        color: #FFFFFF;
+        display: flex;
 
         font-size: 22px;
 
-        width: 250px;
-
-        display: flex;
-
         justify-content: center;
+
+        padding-top: 10px;
 
         text-align: center;
 
-        padding-top: 10px;
+        width: 250px;
     }
 
     span    {
@@ -133,55 +131,56 @@ const TR = styled.tr`
 
     .delete {
         background-color: #FFFFFF;
-        
-        color: #d24b4b;
 
         border: 2px solid #d24b4b;
 
-        padding: 5px;
-
         border-radius: 5px;
+        
+        color: #d24b4b;
+
+        padding: 5px;
     }
 
     .delete:hover {
         background-color: #d24b4b;
-        
+
         color: #FFFFFF;
     }
 
     .save   {
         background-color: #FFFFFF;
         
-        color: #5068be;
-
         border: 2px solid #5068be;
 
-        padding: 5px;
-
         border-radius: 5px;
+
+        color: #5068be;
+
+        padding: 5px;
     }
 
     .save:hover   {
         background-color: #5068be;
-        
+
         color: #FFFFFF;
     }
 
     .back   {
-        color: #ddb95c;
+        background-color: #FFFFFF;
+
         
         border: 2px solid #ddb95c;
 
-        background-color: #FFFFFF;
-
-        padding: 5px;
-
         border-radius: 5px;
+        
+        color: #ddb95c;
+        
+        padding: 5px;
     }
 
     .back:hover   {
-        color: #FFFFFF;
-
         background-color: #ddb95c;
+
+        color: #FFFFFF;
     }
 `;

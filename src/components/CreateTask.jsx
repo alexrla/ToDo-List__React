@@ -14,6 +14,11 @@ export default function CreateTask(props) {
         setTask("");
     }
 
+    var width = window.innerWidth;
+    let messageButton = "";
+
+    width <= 500 ?  messageButton = "Adicionar" : messageButton = "Adicionar Tarefa";
+
     return (
         <Form onSubmit={addTask}>
             <input type="text" 
@@ -23,30 +28,32 @@ export default function CreateTask(props) {
                    autoFocus
             />
 
-            <button type="submit">Adicionar tarefa</button>
+            <button type="submit">{messageButton}</button>
         </Form>
     );
 }
 
 const Form = styled.form`
-    display: flex;
-
     align-items: center;
+
+    display: flex;
 
     margin-bottom: 20px;
 
-    input {
-        border: 2px solid #FAFAFA;
+    max-width: 95%;
 
+    input {
         background-color: #FAFAFA;
+
+        border: 2px solid #FAFAFA;
 
         padding: 5px;
     }
 
     button {
-        border: 2px solid #376CD7;
-
         background-color: #376CD7;
+
+        border: 2px solid #376CD7;
 
         color: #FFFFFF;
 

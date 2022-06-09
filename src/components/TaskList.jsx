@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import TaskItem from './TaskItem';
@@ -29,25 +29,34 @@ export default function TaskList(props) {
 }
 
 const Table = styled.table`
-    width: 600px;
+    color: #FFFFFF;
 
-    font-family: 'Courgette', cursive;
+    max-width: 95%;
+
+    width: 600px;
 
     tr      {
         display: flex;
+
         justify-content: space-between;
     }
 
     th  {
         font-size: 26px;
-        width: 250px;
-        text-align: center;
+
+        font-weight: bold;
 
         padding: 10px;
 
-        color: #FFFFFF;
+        text-align: center;
 
-        font-weight: bold;
+        width: 250px;
+    }
+
+    @media (max-width: 500px)   {
+        th, td {
+            width: 100px;
+        }
     }
 `;
 
