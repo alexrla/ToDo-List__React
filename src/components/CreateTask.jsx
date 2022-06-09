@@ -47,6 +47,8 @@ const Form = styled.form`
 
         border: 2px solid #FAFAFA;
 
+        color: #B3AEAE;
+
         padding: 5px;
     }
 

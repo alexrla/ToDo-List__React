@@ -36,6 +36,8 @@ const Table = styled.table`
     width: 600px;
 
     tr      {
+        align-items: center;
+        
         display: flex;
 
         justify-content: space-between;

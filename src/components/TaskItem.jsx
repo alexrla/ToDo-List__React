@@ -39,6 +39,7 @@ export default function TaskItem(props) {
                                         value={task}
                                         onChange = {(event) => setTask(event.target.value)}
                                         autoFocus
+                                        className="input"
                                 />
                             </form>
                         </td>
@@ -91,6 +92,18 @@ const Tr = styled.tr`
         width: 250px;
     }
 
+    .input  {
+        background-color: #FAFAFA;
+
+        border: 2px solid #FAFAFA;
+
+        border-radius: 5px;
+
+        color: #B3AEAE;
+
+        padding: 5px;
+    }
+
     span    {
         cursor: pointer;
     }
@@ -114,17 +127,17 @@ const Tr = styled.tr`
     .edit {
         background-color: #FFFFFF;
 
-        border: 2px solid #4f9c5a;
+        border: 2px solid #4F9C5A;
 
         border-radius: 5px;
 
-        color: #4f9c5a;
+        color: #4f9C5A;
 
         padding: 5px;
     }
 
     .edit:hover {
-        background-color: #4f9c5a;
+        background-color: #4f9C5A;
 
         color: #FFFFFF;
     }
@@ -132,17 +145,17 @@ const Tr = styled.tr`
     .delete {
         background-color: #FFFFFF;
 
-        border: 2px solid #d24b4b;
+        border: 2px solid #D24B4B;
 
         border-radius: 5px;
         
-        color: #d24b4b;
+        color: #D24B4B;
 
         padding: 5px;
     }
 
     .delete:hover {
-        background-color: #d24b4b;
+        background-color: #D24B4B;
 
         color: #FFFFFF;
     }
@@ -150,17 +163,17 @@ const Tr = styled.tr`
     .save   {
         background-color: #FFFFFF;
         
-        border: 2px solid #5068be;
+        border: 2px solid #5068BE;
 
         border-radius: 5px;
 
-        color: #5068be;
+        color: #5068BE;
 
         padding: 5px;
     }
 
     .save:hover   {
-        background-color: #5068be;
+        background-color: #5068BE;
 
         color: #FFFFFF;
     }
@@ -169,18 +182,24 @@ const Tr = styled.tr`
         background-color: #FFFFFF;
 
         
-        border: 2px solid #ddb95c;
+        border: 2px solid #DDB95C;
 
         border-radius: 5px;
         
-        color: #ddb95c;
+        color: #DDB95C;
         
         padding: 5px;
     }
 
     .back:hover   {
-        background-color: #ddb95c;
+        background-color: #DDB95C;
 
         color: #FFFFFF;
+    }
+
+    @media (max-width: 500px)   {
+        .input {
+           margin-left: 80px;
+        }
     }
 `;
